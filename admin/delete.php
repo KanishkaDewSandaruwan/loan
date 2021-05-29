@@ -18,6 +18,19 @@ if(isset($_REQUEST['saving_id']))
           mysqli_query($con,$query1);
           header('location:saving.php');
 
+}else if(isset($_REQUEST['holder_id']))
+{
+          $id = $_REQUEST['holder_id'];
+
+          $querygetcode="SELECT  * FROM holder where holder_id='".$id."'";
+          $catresult=mysqli_query($con,$querygetcode);
+          $result_row=mysqli_fetch_assoc($catresult);
+          $a=$result_row['holder_id'];
+
+          $query1="DELETE FROM holder WHERE holder_id='$a '";
+          mysqli_query($con,$query1);
+          header('location:member.php');
+
 }else if(isset($_REQUEST['loan_id']))
 {
           $id = $_REQUEST['loan_id'];
