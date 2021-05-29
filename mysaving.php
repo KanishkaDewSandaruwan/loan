@@ -108,9 +108,8 @@ require_once 'user.php';
         <section class="contact-section">
             <div class="container-fluid">
                 <?php $member_id = $_SESSION['member_id'];
-                $viewquery1 = " SELECT * FROM saving where status = 'Accepted' OR status = 'Pending' AND member_id = '$member_id' ";
+                $viewquery1 = "SELECT * FROM saving where status = 'Accepted' OR status = 'Pending' AND member_id = '$member_id' ";
                 $viewresult1 = mysqli_query($con,$viewquery1);
-                $row1 = mysqli_fetch_assoc($viewresult1);
 
                 if ($row1 = mysqli_fetch_assoc($viewresult1)) { ?>
             <div class="row">
@@ -183,7 +182,7 @@ require_once 'user.php';
                         </div>
                 </div>
                     <?php }else{ ?>
-                        <h1>No Any Savin Account Found. Please Apply Saving Account</h1><a style="color: blue" href="apply.php">Click here...</a>
+                        <h1>No Any Saving Account Found. Please Apply Saving Account</h1><a style="color: blue" href="apply.php">Click here...</a>
                     <?php } ?>
                    
             </div>

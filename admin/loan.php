@@ -57,7 +57,7 @@
               <span class="side-nav-menu-icon d-flex mr-3">
                <i class="fas fa-envelope"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Messege</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Message</span>
                 </a>
             </li>
             <!-- End Messege -->
@@ -144,6 +144,7 @@
                                                     <a class="dropdown-item" href="delete.php?loan_id=<?php echo $row['loan_id'] ?>">Delete</a>
                                                 <?php } ?>
                                                 <?php }else if($row['status'] == 'Complete'){ ?>
+                                                    <a class="dropdown-item" href="view_loan.php?loan_id=<?php echo $row['loan_id'] ?>">View Loan Payments</a>
                                                     <a class="dropdown-item" href="delete.php?loan_id=<?php echo $row['loan_id'] ?>">Delete</a>
                                                 <?php }else{ ?>
                                                     <a class="dropdown-item" href="manage_request.php?accept=<?php echo $row['loan_id'] ?>">Accept</a>

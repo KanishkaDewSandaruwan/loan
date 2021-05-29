@@ -57,7 +57,7 @@
               <span class="side-nav-menu-icon d-flex mr-3">
                <i class="fas fa-envelope"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Messege</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Message</span>
                 </a>
             </li>
             <!-- End Messege -->

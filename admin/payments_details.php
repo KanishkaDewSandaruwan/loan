@@ -57,7 +57,7 @@
               <span class="side-nav-menu-icon d-flex mr-3">
                <i class="fas fa-envelope"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Messege</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Message</span>
                 </a>
             </li>
             <!-- End Messege -->
@@ -234,7 +234,7 @@
                                 else{
                                     echo "<script>alert(\"Ohh Snap! your Deposit Update Fail. Plese Try Again!.\");window.location.href=\"payments_details.php?loan_id=".$loan_id."\";</script>";
                                 }
-                              }else{
+                              }else if ($row['current_balance'] - $deposit == 0 ) {
 
                                 $new_balance = $row['current_balance'] - $deposit;
                                 $months = $row['number_of_paid'] + 1;
@@ -257,6 +257,8 @@
                                 else{
                                     echo "<script>alert(\"Ohh Snap! your Deposit Update Fail. Plese Try Again!.\");window.location.href=\"payments_details.php?loan_id=".$loan_id."\";</script>";
                                 }
+                              }else{
+                                echo "<script>alert(\"The loan account balance will be exceeded\");window.location.href=\"payments_details.php?loan_id=".$loan_id."\";</script>";
                               }
                             }
                         } ?>

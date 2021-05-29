@@ -57,7 +57,7 @@
               <span class="side-nav-menu-icon d-flex mr-3">
                <i class="fas fa-envelope"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Messege</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Message</span>
                 </a>
             </li>
             <!-- End Messege -->
@@ -130,7 +130,8 @@
                                                     Action
                                                   </button>
                                                   <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="manage_request.php?member_id=<?php echo $row['member_id'] ?>">Edit</a>
+                                                    <a class="dropdown-item" href="holder.php?member_id=<?php echo $row['member_id'] ?>">Holder Details</a>
+                                                    <a class="dropdown-item" href="edit_member.php?member_id=<?php echo $row['member_id'] ?>">Edit</a>
                                                     <a class="dropdown-item" href="delete.php?member_id=<?php echo $row['member_id'] ?>">Delete</a>
                                                   </div>
                                                 </div>

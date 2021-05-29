@@ -36,6 +36,20 @@ if(isset($_REQUEST['saving_id']))
           header('location:loan.php');
 
 }
+else if(isset($_REQUEST['id']))
+{
+          $id = $_REQUEST['id'];
+
+          $querygetcode="SELECT  * FROM service where id='".$id."'";
+          $catresult=mysqli_query($con,$querygetcode);
+          $result_row=mysqli_fetch_assoc($catresult);
+          $a=$result_row['id'];
+
+          $query1="DELETE FROM service WHERE id='$a '";
+          mysqli_query($con,$query1);
+          header('location:service.php');
+
+}
 else if(isset($_REQUEST['saving_deposit_id']))
 {
           $id = $_REQUEST['saving_deposit_id'];

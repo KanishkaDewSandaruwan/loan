@@ -8,7 +8,7 @@
         <ul id="sideNav" class="side-nav-menu side-nav-menu-top-level mb-0">
 
             <!-- Dashboard -->
-            <li class="side-nav-menu-item ">
+            <li class="side-nav-menu-item active">
                 <a class="side-nav-menu-link media align-items-center" href="index.php">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
@@ -19,7 +19,7 @@
             <!-- End Dashboard -->
 
             <!-- Member -->
-            <li class="side-nav-menu-item ">
+            <li class="side-nav-menu-item">
                 <a class="side-nav-menu-link media align-items-center" href="member.php">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="fas fa-users"></i>
@@ -29,82 +29,41 @@
             </li>
             <!-- End Member -->
 
-            <!-- Users -->
-            <li class="side-nav-menu-item side-nav-has-menu">
-                <a class="side-nav-menu-link media align-items-center" href="#"
-                   data-target="#subUsers">
-                  <span class="side-nav-menu-icon d-flex mr-3">
-                    <i class="gd-user"></i>
-                  </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Users</span>
-                    <span class="side-nav-control-icon d-flex">
-                <i class="gd-angle-right side-nav-fadeout-on-closed"></i>
-              </span>
-                    <span class="side-nav__indicator side-nav-fadeout-on-closed"></span>
-                </a>
-
-                <!-- Users: subUsers -->
-                <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="users.html">All Users</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="user-edit.html">Add new</a>
-                    </li>
-                </ul>
-                <!-- End Users: subUsers -->
-            </li>
-            <!-- End Users -->
-
-            <!-- Authentication -->
-            <li class="side-nav-menu-item side-nav-has-menu">
-                <a class="side-nav-menu-link media align-items-center" href="#"
-                   data-target="#subPages">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-lock"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Authentication</span>
-                    <span class="side-nav-control-icon d-flex">
-                <i class="gd-angle-right side-nav-fadeout-on-closed"></i>
-              </span>
-                    <span class="side-nav__indicator side-nav-fadeout-on-closed"></span>
-                </a>
-
-                <!-- Pages: subPages -->
-                <ul id="subPages" class="side-nav-menu side-nav-menu-second-level mb-0">
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="login.html">Login</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="register.html">Register</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="password-reset.html">Forgot Password</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="password-reset-2.html">Forgot Password 2</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="email-verification.html">Email Verification</a>
-                    </li>
-                </ul>
-                <!-- End Pages: subPages -->
-            </li>
-            <!-- End Authentication -->
-
-            <!-- Settings -->
+            <!-- Saving -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="settings.html">
+                <a class="side-nav-menu-link media align-items-center" href="saving.php">
               <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-settings"></i>
+                <i class="fas fa-money-check-alt"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Settings</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Saving Accounts</span>
                 </a>
             </li>
-            <!-- End Settings -->
+            <!-- End Saving -->
 
-            <!-- Static -->
-            <li class="side-nav-menu-item active">
+            <!-- Loan -->
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="loan.php">
+              <span class="side-nav-menu-icon d-flex mr-3">
+               <i class="fas fa-landmark"></i>
+              </span>
+                    <span class="side-nav-fadeout-on-closed media-body">Loan</span>
+                </a>
+            </li>
+            <!-- End Loan -->
+
+            <!-- Messege -->
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="messege.php">
+              <span class="side-nav-menu-icon d-flex mr-3">
+               <i class="fas fa-envelope"></i>
+              </span>
+                    <span class="side-nav-fadeout-on-closed media-body">Message</span>
+                </a>
+            </li>
+            <!-- End Messege -->
+
+            <!-- Customize -->
+            <li class="side-nav-menu-item">
                 <a class="side-nav-menu-link media align-items-center" href="custom.php">
               <span class="side-nav-menu-icon d-flex mr-3">
                <i class="fas fa-palette"></i>
@@ -112,7 +71,7 @@
                     <span class="side-nav-fadeout-on-closed media-body">Customize Pages</span>
                 </a>
             </li>
-            <!-- End Static -->
+            <!-- End Customize -->
 
         </ul>
     </aside>
@@ -155,28 +114,17 @@
                                     <tr>
                                         <td class="py-3"><?php echo $row['title']; ?></td>
                                         <td class="py-3"><?php echo $row['description']; ?></td>
-                                        <td class="py-3"><img style="width: 200px   " class="img-fluid" src="<?php echo $galaryimage_src; ?>"  alt="Gallery Images"></td>
+                                        <td class="py-3"><img style="width: 200px   " class="img-fluid" src="<?php echo $galaryimage_src; ?>"  alt="Service Images"></td>
                                         <td class="py-3">
-                                            <div class="position-relative">
-                                                <a id="dropDown16Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown16" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown16" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                                    <i class="gd-more-alt icon-text"></i>
-                                                </a>
-
-                                                <ul id="dropDown16" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown16Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                                    <li class="unfold-item">
-                                                        <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                            <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                            <span class="media-body">Edit</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="unfold-item">
-                                                        <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                            <i class="gd-close unfold-item-icon mr-3"></i>
-                                                            <span class="media-body">Delete</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <!-- Example single danger button -->
+                                            <div class="btn-group">
+                                                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Action
+                                                  </button>
+                                                  <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="delete.php?id=<?php echo $row['id'] ?>">Delete</a>
+                                                  </div>
+                                                </div>
                                         </td>
                                     </tr>
                                      <?php   $count++; } ?>
@@ -211,7 +159,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title text-danger" id="exampleModalLabel">Change Contact Details</h5>
+                <h5 class="modal-title text-danger" id="exampleModalLabel">Add New Service</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

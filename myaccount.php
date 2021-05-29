@@ -280,66 +280,67 @@ require_once 'user.php';
                 <button type="submit" name="holder" class="btn btn-primary">Save changes</button>
               </div>
                 </form>
-                <?php
-                   if(isset($_POST['holder'])){
+                            <?php
+                                   if(isset($_POST['holder'])){
 
-                     $address = $_REQUEST['address'];
-                      $pf = $_REQUEST['pf'];
-                      $bank_account = $_REQUEST['bank_account'];
-                      $bank_branch = $_REQUEST['bank_branch'];
- 
-                      $name = $_FILES['file']['name'];
-
-
-                      // $target_dir = "upload/";
-                      $target_dir = "upload/member/";
-                      $target_file = $target_dir . basename($_FILES["file"]["name"]);
+                                     $address = $_REQUEST['address'];
+                                      $pf = $_REQUEST['pf'];
+                                      $bank_account = $_REQUEST['bank_account'];
+                                      $bank_branch = $_REQUEST['bank_branch'];
+                 
+                                      $name = $_FILES['file']['name'];
 
 
-                      // Select file type
-                      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                                      // $target_dir = "upload/";
+                                      $target_dir = "upload/member/";
+                                      $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-                      // Valid file extensions
-                      $extensions_arr = array("jpg","jpeg","png","gif");
+                                      $member_id = $_REQUEST['member_id'];
 
-                      // Check extension
-                      if( in_array($imageFileType,$extensions_arr) ){
-                          move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
-                          $query="UPDATE holder SET bank_image='$name'";
-                          mysqli_query($con,$query);
-                          echo '<script>alert("Header Details Change Success"); window.location.href="myaccount.php";</script>';
-                      }
-                      if(!empty($pf))
-                      {
-                        $query3="UPDATE holder SET pf_no='$pf'";
-                        $sql3=mysqli_query($con,$query3);
-                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
-                      }
+                                      // Select file type
+                                      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-                      if(!empty($address))
-                      {
-                        $query3="UPDATE holder SET station_address='$address'";
-                        $sql3=mysqli_query($con,$query3);
-                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
-                      }
+                                      // Valid file extensions
+                                      $extensions_arr = array("jpg","jpeg","png","gif");
 
-                      if(!empty($bank_account))
-                      {
-                        $query3="UPDATE holder SET bank_account='$bank_account'";
-                        $sql3=mysqli_query($con,$query3);
-                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
-                      }
-                      if(!empty($bank_branch))
-                      {
-                        $query3="UPDATE holder SET bank_branch='$bank_branch'";
-                        $sql3=mysqli_query($con,$query3);
-                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
-                      }
+                                      // Check extension
+                                      if( in_array($imageFileType,$extensions_arr) ){
+                                          move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+                                          $query="UPDATE holder SET bank_image='$name' where member_id = '$member_id'  ";
+                                          mysqli_query($con,$query);
+                                          echo '<script>alert("Header Details Change Success"); window.location.href="myaccount.php";</script>';
+                                      }
+                                      if(!empty($pf))
+                                      {
+                                        $query3="UPDATE holder SET pf_no='$pf' where member_id = '$member_id'  ";
+                                        $sql3=mysqli_query($con,$query3);
+                                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
+                                      }
+
+                                      if(!empty($address))
+                                      {
+                                        $query3="UPDATE holder SET station_address='$address' where member_id = '$member_id'  ";
+                                        $sql3=mysqli_query($con,$query3);
+                                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
+                                      }
+
+                                      if(!empty($bank_account))
+                                      {
+                                        $query3="UPDATE holder SET bank_account='$bank_account' where member_id = '$member_id'  ";
+                                        $sql3=mysqli_query($con,$query3);
+                                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
+                                      }
+                                      if(!empty($bank_branch))
+                                      {
+                                        $query3="UPDATE holder SET bank_branch='$bank_branch' where member_id = '$member_id'  ";
+                                        $sql3=mysqli_query($con,$query3);
+                                        echo "<script type=\"text/javascript\"> alert(\"Updated Succussfully\"); window.location= \"myaccount.php\";</script>";
+                                      }
 
 
-                    }
-                    
-                  ?>
+                                    }
+                                    
+                                  ?>
                     
             </div>
           </div>
